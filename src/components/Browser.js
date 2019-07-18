@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Error from './Error';
 
-const Browser = props => {
+const Browser = ({ saveBusqueda }) => {
     const [searchTerm, saveSearchTerm] = useState('');
     const [error, saveError] = useState(false);
 
@@ -16,6 +16,7 @@ const Browser = props => {
 
         // Enviar el termino hacia a el componente principal
         saveError(false);
+        saveBusqueda(searchTerm);
     };
 
     return (
